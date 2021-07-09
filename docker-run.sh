@@ -28,5 +28,5 @@ echo "Running backup: ${PGDATABASE}"
 pg_dump -h ${PGHOST} -Fc ${PGDATABASE} > /dump/dump_`date +%Y-%m-%d"_"%H_%M_%S`.psql
 
 echo "Deleteing extra backups and only keeping: ${NUM_KEEP}"
-ls -t /dump/dump*.psql | sort | sed -e "1,${NUM_KEEP}d" | xargs -d '\n' rm -- {}
+ls -t /dump/dump*.psql | sort | sed -e "1,${NUM_KEEP}d" | xargs -r -d '\n' rm -- {}
 exit 0
