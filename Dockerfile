@@ -1,4 +1,4 @@
-FROM postgres:13.4-alpine3.14
+FROM postgres:14.0-alpine3.14
 
 COPY docker-run.sh /
 
