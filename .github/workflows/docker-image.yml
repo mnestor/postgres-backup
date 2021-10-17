@@ -33,7 +33,7 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=pr
-            type=semver,pattern={{raw}},value=${{env.NC_LABEL}}
+            type=raw,value=${{env.NC_LABEL}}
             type=sha
           #  type=schedule
           #  type=ref,event=branch
